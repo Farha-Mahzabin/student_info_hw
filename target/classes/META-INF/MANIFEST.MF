@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: somer
+Build-Jdk: 11.0.1
+Implementation-Title: student_info
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.rapi.stinfo
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/student_info
+Created-By: Maven Integration for Eclipse
+
