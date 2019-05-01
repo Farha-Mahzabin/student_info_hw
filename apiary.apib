@@ -1,0 +1,111 @@
+FORMAT: 1A
+HOST: https://obscure-chamber-26092.herokuapp.com/
+
+# Student
+
+Student Information is a REST API to allow users to view and update student information. 
+
+# Allowed HTTP requests: 
+<pre>
+PUT     : Update resource
+POST    : Create resource
+GET     : Get a resource or list of resources 
+DELETE  : To delete a resource
+</pre>
+
+# Group Student
+
+**User attributes:**
+- id `(HexString)`    : Unique Identifier
+- name `(String)`     : Name of the student
+- roll `(String)`     : Roll of the student 
+
+## Student Collection [/student]
+
+### List All Students [GET /student/]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id"  : "5cbd75018f85d11a6c9a71c3",
+                "name" : "abc",
+                "roll" : "514"
+            },
+            
+            {
+                "_id"  : "5cbd75098f85d11a6c9a71c4",
+                "name" : "a5bc",
+                "roll" : "4"
+            },
+            
+            {
+                "_id"  : "5cbdd8a9f4d5490004bd7c9e",
+                "name" : "xyz",
+                "roll" : "3"
+            },
+            
+            
+        ]
+        
+### Create a New Student [POST /student/]
+
++ Request (application/json)
+
+        {
+            "name" : "John Doe",
+            "roll" : "65"
+        }
+        
++ Response 201 (application/json)
+        
+        {
+            "_id"  : "fd16c23609200c15a47c8",
+            "name" : "John Doe",
+            "roll" : "65"
+        }
+        
+### List Student by id [GET /student/{id}]
+Retrieve a single Student by id
++ Parameters
+    + id (required, HexString, `5cbd75018f85d11a6c9a71c3` ... HexString `id`  of the student to perform action with)
+
++ Response 200 (application/json)
+
+        {
+            "_id" :"5cbd75018f85d11a6c9a71c3",
+            "name":"abc",
+            "roll":"514"
+        }
+        
+### Update an Student by ID [PUT /student/{id}]      
+Update an student under the collection with given id
++ Parameters
+    + id (required, HexString, `5cbd75018f85d11a6c9a71c3` ... HexString `id`  of the student to perform action with)
+
++ Request (application/json) 
+
+        {
+            "name": "Jane Doe",
+            "roll": "514"
+        }
+        
++ Response 201 (application/json)
+
+        {
+            "_id" :"5cbd75018f85d11a6c9a71c3",
+            "name":"Jane Doe",
+            "roll":"514"
+        }
+        
+### Remove a Student [DELETE /{id}]
++ Parameters
+    + id (required, HexString, `5cbd75018f85d11a6c9a71c3` ... HexString `id`  of the student to perform action with)
+    
++ Response 200 (application/json)
+
+        {
+            "_id" :"5cbd75018f85d11a6c9a71c3",
+            "name":"abc",
+            "roll":"514"
+        }
